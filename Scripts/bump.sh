@@ -9,17 +9,17 @@ CASK="$(cd "$(dirname "$0")/.." && pwd)/Casks/your-turn.rb"
 URL="https://github.com/himynameisben/your-turn/releases/download/v${VERSION}/YourTurn-${VERSION}.zip"
 
 TMP="$(mktemp -d)"
-trap 'rm -rf "$TMP"' EXIT
+trap 'rm -rf "${TMP}"' EXIT
 
 # -f turns a not-yet-published tag into a non-zero exit instead of hashing GitHub's
 # 404 page, which would otherwise commit cleanly and fail on every user's machine.
-curl -fsSL --retry 3 -o "$TMP/app.zip" "$URL"
-SHA="$(shasum -a 256 "$TMP/app.zip" | cut -d' ' -f1)"
+curl -fsSL --retry 3 -o "${TMP}/app.zip" "${URL}"
+SHA="$(shasum -a 256 "${TMP}/app.zip" | cut -d' ' -f1)"
 
 /usr/bin/sed -i '' \
   -e "s|^  version \".*\"$|  version \"${VERSION}\"|" \
   -e "s|^  sha256 \".*\"$|  sha256 \"${SHA}\"|" \
-  "$CASK"
+  "${CASK}"
 
 echo "your-turn → ${VERSION}"
 echo "sha256    → ${SHA}"
