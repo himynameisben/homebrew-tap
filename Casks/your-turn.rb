@@ -1,6 +1,6 @@
 cask "your-turn" do
-  version "0.2.0"
-  sha256 "c819c0710492f0709a5fd383ceb7f92474093a55201db5db161f8ab9be89f0e3"
+  version "0.3.0"
+  sha256 "7fda1d641023323d64f89bd6d3de2f7a5b62b9de6e9fcd62b0a04ff920c445da"
 
   url "https://github.com/himynameisben/your-turn/releases/download/v#{version}/YourTurn-#{version}.zip"
   name "Your Turn"
