@@ -1,10 +1,10 @@
 cask "your-turn" do
-  version "0.3.0"
-  sha256 "7fda1d641023323d64f89bd6d3de2f7a5b62b9de6e9fcd62b0a04ff920c445da"
+  version "0.4.0"
+  sha256 "861937ce3dddf76ece702444530cc53757310b4a4c3a9f2df283567050559d9f"
 
   url "https://github.com/himynameisben/your-turn/releases/download/v#{version}/YourTurn-#{version}.zip"
   name "Your Turn"
-  desc "Menu bar inbox for Claude Code sessions"
+  desc "Menu bar inbox for Claude Code and Codex sessions"
   homepage "https://github.com/himynameisben/your-turn"
 
   livecheck do
